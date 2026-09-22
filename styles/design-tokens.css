@@ -1,0 +1,266 @@
+/* ==========================================================================
+   ⚡ KOSHIN CROSSFIT — DESIGN TOKENS & NEON UTILITY STYLES
+   Theme: Miami Vice Synthwave × Elite Athletic CrossFit
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Bebas+Neue&family=Black+Ops+One&family=Caveat:wght@500;700&family=Montserrat:wght@700;800;900&family=Mr+Dafoe&family=Permanent+Marker&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Rubik+Wet+Paint&family=Teko:wght@600;700&display=swap');
+
+:root {
+  /* --- Primary Neons --- */
+  --koshin-pink-500: #FF007F;
+  --koshin-pink-400: #FF2E93;
+  --koshin-pink-600: #D6006B;
+  --koshin-pink-glow: rgba(255, 0, 127, 0.4);
+
+  --koshin-cyan-500: #00F0FF;
+  --koshin-cyan-400: #38F3FF;
+  --koshin-cyan-600: #00B8C4;
+  --koshin-cyan-glow: rgba(0, 240, 255, 0.35);
+
+  --koshin-purple-500: #7B2CBF;
+  --koshin-purple-400: #9D4EDD;
+  --koshin-purple-700: #3C096C;
+
+  /* --- Dark Obsidian Canvas & Surfaces --- */
+  --koshin-canvas-bg: #08080D;
+  --koshin-canvas-body: #0D0D15;
+  --koshin-surface-card: rgba(20, 20, 34, 0.82);
+  --koshin-surface-elevated: #1D1D30;
+  --koshin-surface-border: #282842;
+  --koshin-surface-border-subtle: rgba(255, 255, 255, 0.08);
+
+  /* --- Functional Accents --- */
+  --koshin-accent-bonfire: #FF6600;
+  --koshin-accent-green: #00FF87;
+  --koshin-accent-crimson: #FF1744;
+
+  /* --- Typography Colors --- */
+  --koshin-text-white: #FFFFFF;
+  --koshin-text-body: #E2E2ED;
+  --koshin-text-muted: #9191A8;
+  --koshin-text-chalk: #F7F7FA;
+
+  /* --- Font Stacks --- */
+  --font-logo-distressed: 'Black Ops One', 'Rubik Wet Paint', 'Teko', 'Bebas Neue', sans-serif;
+  --font-logo-sub: 'Montserrat', 'Barlow Condensed', sans-serif;
+  --font-display: 'Bebas Neue', 'Teko', sans-serif;
+  --font-brush: 'Permanent Marker', cursive;
+  --font-neon-script: 'Mr Dafoe', cursive;
+  --font-chalk: 'Caveat', cursive;
+  --font-athletic: 'Barlow Condensed', sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* --- Gradients --- */
+  --gradient-miami-sunset: linear-gradient(135deg, #FF007F 0%, #7B2CBF 50%, #00F0FF 100%);
+  --gradient-neon-strike: linear-gradient(90deg, #FF007F 0%, #00F0FF 100%);
+  --gradient-card-glass: linear-gradient(180deg, rgba(29, 29, 48, 0.75) 0%, rgba(13, 13, 21, 0.92) 100%);
+}
+
+/* ==========================================================================
+   Logo & Wordmark Classes
+   ========================================================================== */
+.koshin-wordmark-distressed {
+  font-family: var(--font-logo-distressed);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 0.9;
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(180deg, #FFFFFF 0%, #D8D8E5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 12px rgba(255, 0, 127, 0.4));
+}
+
+.koshin-wordmark-pink {
+  font-family: var(--font-logo-distressed);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 0.9;
+  color: var(--koshin-pink-500);
+  text-shadow: 0 0 10px rgba(255, 0, 127, 0.8), 0 0 25px rgba(255, 0, 127, 0.4);
+}
+
+.koshin-sub-crossfit {
+  font-family: var(--font-logo-sub);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.38em;
+  color: var(--koshin-cyan-500);
+  text-shadow: 0 0 8px rgba(0, 240, 255, 0.6);
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
+.koshin-tagline-elite {
+  font-family: var(--font-athletic);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--koshin-text-muted);
+  font-size: 0.7rem;
+  line-height: 1;
+}
+
+/* Gorilla Logo Container */
+.gorilla-badge-nav {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px rgba(255, 0, 127, 0.6));
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.gorilla-badge-nav:hover {
+  transform: scale(1.1) rotate(-3deg);
+  filter: drop-shadow(0 0 16px rgba(255, 0, 127, 0.9));
+}
+
+/* ==========================================================================
+   Typography Utility Classes
+   ========================================================================== */
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.font-brush {
+  font-family: var(--font-brush);
+  letter-spacing: 0.02em;
+}
+
+.font-neon-script {
+  font-family: var(--font-neon-script);
+}
+
+.font-chalk {
+  font-family: var(--font-chalk);
+}
+
+.font-athletic {
+  font-family: var(--font-athletic);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+/* ==========================================================================
+   Neon Text & Box Glows
+   ========================================================================== */
+.text-neon-pink {
+  color: var(--koshin-pink-500);
+  text-shadow: 0 0 8px rgba(255, 0, 127, 0.75), 0 0 20px rgba(255, 0, 127, 0.45);
+}
+
+.text-neon-cyan {
+  color: var(--koshin-cyan-500);
+  text-shadow: 0 0 8px rgba(0, 240, 255, 0.75), 0 0 20px rgba(0, 240, 255, 0.45);
+}
+
+.text-neon-white {
+  color: #FFFFFF;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 25px rgba(255, 0, 127, 0.5);
+}
+
+.border-neon-pink {
+  border: 1.5px solid var(--koshin-pink-500);
+  box-shadow: 0 0 12px rgba(255, 0, 127, 0.45), inset 0 0 8px rgba(255, 0, 127, 0.15);
+}
+
+.border-neon-cyan {
+  border: 1.5px solid var(--koshin-cyan-500);
+  box-shadow: 0 0 12px rgba(0, 240, 255, 0.45), inset 0 0 8px rgba(0, 240, 255, 0.15);
+}
+
+/* ==========================================================================
+   Card & Surface Components
+   ========================================================================== */
+.koshin-glass-card {
+  background: var(--gradient-card-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--koshin-surface-border-subtle);
+  border-radius: 16px;
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.65);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.koshin-glass-card:hover {
+  border-color: rgba(255, 0, 127, 0.4);
+  box-shadow: 0 16px 45px 0 rgba(0, 0, 0, 0.75), 0 0 20px rgba(255, 0, 127, 0.2);
+  transform: translateY(-2px);
+}
+
+.koshin-schedule-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(20, 20, 34, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1.5px solid var(--koshin-pink-500);
+  box-shadow: 0 0 14px rgba(255, 0, 127, 0.35);
+  border-radius: 12px;
+  padding: 10px 18px;
+  font-family: var(--font-athletic);
+  font-weight: 800;
+  font-size: 1.25rem;
+  letter-spacing: 0.1em;
+  color: #FFFFFF;
+}
+
+/* ==========================================================================
+   Button Components
+   ========================================================================== */
+.btn-koshin-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--koshin-pink-500) 0%, var(--koshin-purple-500) 100%);
+  color: #FFFFFF;
+  font-family: var(--font-athletic);
+  font-weight: 800;
+  font-size: 1.125rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(255, 0, 127, 0.5);
+  transition: all 0.25s ease;
+}
+
+.btn-koshin-primary:hover {
+  box-shadow: 0 0 30px rgba(255, 0, 127, 0.8), 0 0 50px rgba(123, 44, 191, 0.5);
+  transform: scale(1.02);
+}
+
+.btn-koshin-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 240, 255, 0.06);
+  color: var(--koshin-cyan-500);
+  font-family: var(--font-athletic);
+  font-weight: 800;
+  font-size: 1.125rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 12px 26px;
+  border-radius: 8px;
+  border: 2px solid var(--koshin-cyan-500);
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+  transition: all 0.25s ease;
+}
+
+.btn-koshin-secondary:hover {
+  background: var(--koshin-cyan-500);
+  color: #08080D;
+  box-shadow: 0 0 30px rgba(0, 240, 255, 0.75);
+  transform: scale(1.02);
+}
