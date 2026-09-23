@@ -1,4 +1,7 @@
 {
-  "name": "koshin-crossfit",
-  "version": 2
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "buildCommand": "pnpm turbo run build --filter=@koshin/web...",
+  "installCommand": "pnpm install",
+  "outputDirectory": "apps/web/.next"
 }

@@ -1,0 +1,17 @@
+{
+  "name": "koshin-monorepo",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "check-types": "turbo run check-types",
+    "clean": "turbo run clean && rm -rf node_modules"
+  },
+  "devDependencies": {
+    "turbo": "^2.4.4",
+    "prettier": "^3.5.2",
+    "typescript": "^5.8.2"
+  },
+  "packageManager": "pnpm@11.17.0"
+}

@@ -2,4 +2,9 @@
 .vercel
 node_modules/
 dist/
+.turbo/
+.next/
 *.log
+*.tsbuildinfo
+.env.local
+.env.*.local
