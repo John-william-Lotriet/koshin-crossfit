@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { SiteSettingsDocument } from '@/lib/sanity/types';
+import { MatrixSignature } from './MatrixSignature';
 
 interface FooterProps {
   settings?: SiteSettingsDocument;
@@ -152,8 +153,8 @@ export const Footer: React.FC<FooterProps> = ({ settings }) => {
           <div>
             © {new Date().getFullYear()} Koshin CrossFit. All Rights Reserved. 2 Sunfield Place, Durban North.
           </div>
-          <div className="font-athletic tracking-[0.1em]">
-            BUILT WITH <span className="text-koshin-pink-500">♥</span> BY THE KOSHIN COMMUNITY
+          <div className="flex items-center">
+            <MatrixSignature />
           </div>
         </div>
       </div>
