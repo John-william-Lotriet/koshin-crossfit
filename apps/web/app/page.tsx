@@ -4,7 +4,8 @@ import { fallbackHomePage, fallbackSiteSettings } from '@/lib/sanity/mockData';
 import { PageDocument, SiteSettingsDocument } from '@/lib/sanity/types';
 import { SiteLayout } from '@/components/layout/SiteLayout';
 
-export const revalidate = 60; // Revalidate every 60 seconds (ISR)
+export const dynamic = 'force-dynamic';
+export const revalidate = 0; // Fetch fresh CMS data on every request
 
 export default async function HomePage() {
   let page: PageDocument = fallbackHomePage;
