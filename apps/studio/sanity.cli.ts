@@ -2,8 +2,9 @@ import { defineCliConfig } from 'sanity/cli';
 
 export default defineCliConfig({
   api: {
-    projectId: process.env.SANITY_STUDIO_PROJECT_ID || 'koshin-preview',
+    projectId: process.env.SANITY_STUDIO_PROJECT_ID || '59qjqnfy',
     dataset: process.env.SANITY_STUDIO_DATASET || 'production',
   },
+  studioHost: 'koshin-crossfit',
   autoUpdates: true,
 });

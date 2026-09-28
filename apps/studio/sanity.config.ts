@@ -7,7 +7,7 @@ export default defineConfig({
   name: 'default',
   title: 'Koshin CrossFit Studio',
 
-  projectId: process.env.SANITY_STUDIO_PROJECT_ID || 'koshin-preview',
+  projectId: process.env.SANITY_STUDIO_PROJECT_ID || '59qjqnfy',
   dataset: process.env.SANITY_STUDIO_DATASET || 'production',
 
   plugins: [
