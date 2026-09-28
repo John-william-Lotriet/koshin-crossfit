@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { Users } from 'lucide-react';
 import { CoachTraitItem, PolaroidCard } from '@koshin/ui';
 import { CoachesSectionBlock } from '@/lib/sanity/types';
+import { urlForImage } from '@/lib/sanity/image';
 
 interface CoachesBlockProps {
   block: CoachesSectionBlock;
@@ -27,10 +28,19 @@ export const CoachesBlock: React.FC<CoachesBlockProps> = ({ block }) => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
         {coaches.map((c) => {
-          const photoSrc =
-            typeof c.photo === 'string'
-              ? c.photo
-              : c.photo?.asset?._ref || '/assets/coach-strech.jpg';
+          const isCurtis = c.name?.toLowerCase().includes('curtis');
+          const isNats = c.name?.toLowerCase().includes('nat') || c.name?.toLowerCase().includes('nats');
+          const fallbackPhoto = isCurtis
+            ? '/assets/coach-curtis.jpg'
+            : isNats
+            ? '/assets/coach-nats.jpg'
+            : '/assets/coach-strech.jpg';
+          const photoSrc = urlForImage(c.photo) || fallbackPhoto;
+          const objectPosition = isCurtis
+            ? 'object-[center_25%]'
+            : isNats
+            ? 'object-[center_15%]'
+            : 'object-[center_20%]';
 
           return (
             <div
@@ -38,13 +48,13 @@ export const CoachesBlock: React.FC<CoachesBlockProps> = ({ block }) => {
               className="bg-gradient-to-b from-[#1d1d30]/70 to-[#0d0d15]/95 border border-koshin-border rounded-2xl overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-1 hover:border-koshin-pink-500 hover:shadow-neon-pink"
             >
               {/* Photo Box */}
-              <div className="relative w-full h-[240px] sm:h-[260px] bg-[#11111d]">
+              <div className="relative w-full h-[260px] sm:h-[280px] bg-[#11111d]">
                 <Image
                   src={photoSrc}
                   alt={c.name}
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover"
+                  className={`object-cover ${objectPosition}`}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d15] via-transparent to-transparent flex items-end p-5">
                   <div>

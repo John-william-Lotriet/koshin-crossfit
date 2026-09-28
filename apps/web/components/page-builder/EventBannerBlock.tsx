@@ -1,8 +1,10 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { Button } from '@koshin/ui';
 import { EventSectionBlock } from '@/lib/sanity/types';
+import { urlForImage } from '@/lib/sanity/image';
 
 interface EventBannerBlockProps {
   block: EventSectionBlock;
@@ -10,10 +12,26 @@ interface EventBannerBlockProps {
 }
 
 export const EventBannerBlock: React.FC<EventBannerBlockProps> = ({ block, onOpenTrialModal }) => {
+  const bgImageSrc =
+    urlForImage(block.backgroundImage) ||
+    'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop';
+
   return (
     <section className="w-full max-w-[1280px] mx-auto px-4 sm:px-6 mb-16 sm:mb-20">
-      <div className="relative rounded-2xl sm:rounded-3xl p-6 sm:p-10 md:p-12 overflow-hidden border-1.5 border-koshin-pink-500 shadow-neon-pink bg-gradient-to-r from-koshin-canvas via-[#141422]/95 to-koshin-canvas">
-        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-8 items-center">
+      <div className="relative rounded-2xl sm:rounded-3xl p-6 sm:p-10 md:p-12 overflow-hidden border-1.5 border-koshin-pink-500 shadow-neon-pink">
+        {/* Background Image & Gradient */}
+        <div className="absolute inset-0 -z-10">
+          <Image
+            src={bgImageSrc}
+            alt="Koshin Community Gathering"
+            fill
+            sizes="100vw"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#08080d]/95 via-[#08080d]/85 to-[#08080d]/92" />
+        </div>
+
+        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-8 items-center">
           <div>
             <span className="inline-block font-athletic text-xs font-bold uppercase tracking-[0.2em] text-koshin-pink-500 border border-koshin-pink-500/40 px-3 py-1 rounded-full mb-3">
               {block.eyebrow || '🔥 MONTHLY COMMUNITY GATHERING'}

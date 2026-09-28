@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { MapPin, Zap, Flame, Calendar } from 'lucide-react';
 import { Button, MetricStat } from '@koshin/ui';
 import { HeroSectionBlock } from '@/lib/sanity/types';
+import { urlForImage } from '@/lib/sanity/image';
 
 interface HeroBlockProps {
   block: HeroSectionBlock;
@@ -12,6 +13,9 @@ interface HeroBlockProps {
 }
 
 export const HeroBlock: React.FC<HeroBlockProps> = ({ block, onOpenTrialModal }) => {
+  const heroImgSrc =
+    urlForImage(block.visualImage) ||
+    'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1200&auto=format&fit=crop';
   return (
     <section
       id="home"
@@ -94,11 +98,7 @@ export const HeroBlock: React.FC<HeroBlockProps> = ({ block, onOpenTrialModal })
             <div className="relative rounded-2xl p-2.5 sm:p-3.5 bg-gradient-to-b from-[#1d1d30]/60 to-[#0d0d15]/95 border-1.5 border-koshin-pink-500/45 shadow-[0_0_35px_rgba(255,0,127,0.3),0_20px_50px_rgba(0,0,0,0.85)]">
               <div className="relative w-full h-[300px] sm:h-[380px] md:h-[420px] rounded-xl overflow-hidden bg-[#11111d]">
                 <Image
-                  src={
-                    typeof block.visualImage === 'string'
-                      ? block.visualImage
-                      : '/assets/coach-strech.jpg'
-                  }
+                  src={heroImgSrc}
                   alt="Koshin CrossFit Athlete Training"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"

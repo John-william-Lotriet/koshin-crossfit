@@ -67,6 +67,7 @@ export interface MascotSectionBlock {
   eyebrow?: string;
   title?: string;
   description?: string;
+  mascotImage?: SanityImage | string;
   pills?: string[];
 }
 

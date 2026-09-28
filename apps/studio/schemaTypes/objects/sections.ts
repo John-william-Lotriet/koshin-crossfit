@@ -344,6 +344,12 @@ export const mascotSection = defineType({
         'The Koshin Gorilla represents raw athletic strength, fierce loyalty to the pack, and an unbreakable work ethic. Whether you’re lifting your first barbell or racing HYROX, we carry each other every step of the way.',
     }),
     defineField({
+      name: 'mascotImage',
+      title: 'Mascot Avatar Image',
+      type: 'image',
+      options: { hotspot: true },
+    }),
+    defineField({
       name: 'pills',
       title: 'Brand Pillars',
       type: 'array',

@@ -2,18 +2,21 @@ import React from 'react';
 import Image from 'next/image';
 import { Crown } from 'lucide-react';
 import { MascotSectionBlock } from '@/lib/sanity/types';
+import { urlForImage } from '@/lib/sanity/image';
 
 interface MascotShowcaseBlockProps {
   block: MascotSectionBlock;
 }
 
 export const MascotShowcaseBlock: React.FC<MascotShowcaseBlockProps> = ({ block }) => {
+  const mascotImgSrc = urlForImage(block.mascotImage) || '/assets/koshin-gorilla-mascot-pink.png';
+
   return (
     <section className="w-full max-w-[1280px] mx-auto px-4 sm:px-6 mb-12 sm:mb-16">
       <div className="bg-gradient-to-br from-[#141422]/90 to-[#08080d]/95 border-1.5 border-koshin-cyan-500/40 rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-[0_0_30px_rgba(0,240,255,0.18)] grid grid-cols-1 md:grid-cols-[160px_1fr] gap-6 md:gap-8 items-center text-center md:text-left">
         <div className="relative w-28 h-28 sm:w-36 sm:h-36 mx-auto drop-shadow-[0_0_25px_rgba(255,0,127,0.8)]">
           <Image
-            src="/assets/koshin-gorilla-mascot-pink.png"
+            src={mascotImgSrc}
             alt="Koshin Gorilla Mascot"
             fill
             sizes="160px"
